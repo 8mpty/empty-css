@@ -1,0 +1,12 @@
+/* div.showPrivate.showSearch.container */
+@-moz-document url("about:home"), url("about:newtab"), url("about:privatebrowsing")
+{
+    .showPrivate.showSearch.container { 
+        display: none !important; 
+        visibility: hidden !important;
+    }
+
+    body {
+        background: url('imgs/gifs/2022-11-25\ 03-23-03.gif') center/cover no-repeat fixed !important;
+    }
+}
