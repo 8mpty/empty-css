@@ -1,44 +1,26 @@
 
+/* full-screen-api.ignore-widgets = true */
+
+* {
+    scrollbar-width: 10px !important;
+}
 
 /* remove window control buttons */
 .titlebar-buttonbox-container { 
-    display: inherit !important; 
+    display: inherit !important;
 }
 
 #back-button, 
 #forward-button, 
 #reload-button, 
 #home-button, 
-/* #nav-bar-overflow-button, */
+#alltabs-button,
 #urlbar-go-button,
-#pageActionButton
+#pageActionButton,
+#private-browsing-indicator-with-label > label
 {
     display: none !important; 
 }
-
-#private-browsing-indicator-with-label > label {
-    display: none !important;
-}
-
-#nav-bar{
-    --navbar-margin: -1px;
-    margin-top: var(--navbar-margin);
-    margin-bottom: 0;
-    z-index: -100;
-    transition: all 0.1s ease !important;
-    opacity: 0;
-    display: block !important;
-}
-
-#navigator-toolbox:focus-within > #nav-bar{
-    margin-top: 0px !important;
-    /* margin-bottom: var(--navbar-margin); */
-    transition: all 0.1s ease !important;
-    margin-bottom: 0px !important;
-    z-index: 100;
-    opacity: 1;
-}
-
 
 .tab-background{ 
     border-radius: 0 !important; 
@@ -46,45 +28,89 @@
 
 .tab-background[selected]{
     background: var(--toolbar-bgcolor) !important;
-    background-color: black !important;
+    background-color: rgb(25, 27, 27) !important;
     border: 1px solid rgb(174, 33, 106) !important;
     border-radius: 5px !important;
+}
+
+.tabbrowser-tab{
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    /* max-width: 35px !important; min-width: 35px !important; */
+    max-width: 10vw !important; min-width: 10vw !important;
 }
 
 .tabbrowser-tab:not([selected]) .tab-content{
     color: rgb(174, 33, 106) !important;
 }
 
-.tabbrowser-tab{
-    min-height: 35px !important;
-    max-height: 35px !important;
+.tabbrowser-tab:not([selected]){
+    /* Just to show icon */
+    max-width: 35px !important; min-width: 35px !important;
+    
+
+    /* Make inactive tabs visible without hiding */
+    /* max-width: 10vw !important; min-width: 10vw !important; */
 }
+
+.tabbrowser-tab:not([selected]):hover{
+    border-radius: 5px !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+    
+    /* Comment out if you would not want to preview tab contents when hover */
+    max-width: 10vw !important; min-width: 10vw !important;
+}
+
+
+
 
 .bookmark-item:hover {
     border: 0.2px solid rgb(174, 33, 106) !important;
     border-radius: 50px !important;
     background: transparent !important;
+    background: transparent !important;
+    background-color: var(--toolbar-bgcolor) !important;
 }
 
 .bookmark-item{
     border: 1px solid transparent !important;
 }
 
-#customizableui-special-spring95{
-    min-width: 30px !important;
-    max-width: 30px !important;
+menupopup {
+    --panel-background: rgb(25, 27, 27) !important;
+    --panel-color: white !important;
 }
 
-#nav-bar{
-    min-height: 40px !important;
-    max-height: 40px !important;
+#PlacesToolbar menupopup[placespopup="true"] {
+    --arrowpanel-background: rgb(25, 27, 27) !important;
+    --arrowpanel-color: white !important;
+    border: 0 !important;
+    padding-top: 2px !important;
+}
+
+#navigator-toolbox > toolbar:not(#TabsToolbar):not(#toolbar-menubar) menupopup[placespopup] {
+    --moz-appearance: none !important;
+    border: 0 !important;
+    padding-top: 8px !important;
+}
+
+#customizableui-special-spring95{
+    margin-top: 14px !important;
+    margin-bottom: 14px !important;
+    
+    margin-left: 13px !important;
+    margin-right: 13px !important;
+
+    min-width: 13px !important;
+    max-width: 13px !important;
+    /* background-color: rgb(174, 33, 106) !important; */
+    background: url('../backgrounds/icons/grab.png');
+    background-color: rgb(174, 33, 106) !important;
+    border-radius: 50% !important;
 }
 
 #customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
-
-#PersonalToolbar{
-    margin-top: 1px !important;
-}
 
 #urlbar-container:not(:focus-within){
     opacity: 0 !important;
@@ -92,3 +118,49 @@
     min-height: 10px !important;
     max-height: 10px !important;
 }
+
+#TabsToolbar{
+    background: rgb(25, 27, 27) !important;
+}
+
+#urlbar-input-container{
+    padding-top: 2px !important;
+    padding-bottom: 0px !important;
+}
+
+/* Autohide Navbar */
+/* #nav-bar:not([customizing="true"]):not([inFullscreen]) {
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    transition: all 0.1s ease !important;
+    z-index: -100 !important;
+} */
+
+#nav-bar:not(:focus-within) {
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    z-index: -100 !important;
+}
+
+
+
+/* Autohi Toolbar stuff */
+/* #navigator-toolbox, #navigator-toolbox:not([inFullscreen]){
+    height: 15px !important;
+    opacity: 0 !important;
+    opacity: transparent !important;
+}
+
+#navigator-toolbox:not([inFullscreen]):hover, #urlbar-input-container:focus-within:focus-visible, #PersonalToolbar:focus-within:focus{
+    visibility: visible !important;
+    margin-top: 1px !important;
+    margin-bottom: 2px !important;
+    height: 39px !important;
+    opacity: 1 !important;
+    transition: all 0.1s ease !important;
+    z-index: 99 !important;
+} */

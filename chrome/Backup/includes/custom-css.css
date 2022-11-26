@@ -1,0 +1,138 @@
+
+
+/* remove window control buttons */
+.titlebar-buttonbox-container { 
+    display: inherit !important; 
+}
+
+#back-button, 
+#forward-button, 
+#reload-button, 
+#home-button, 
+/* #nav-bar-overflow-button, */
+#urlbar-go-button,
+#pageActionButton
+{
+    display: none !important; 
+}
+
+#private-browsing-indicator-with-label > label {
+    display: none !important;
+}
+
+.tab-background{ 
+    border-radius: 0 !important; 
+}
+
+.tab-background[selected]{
+    background: var(--toolbar-bgcolor) !important;
+    background-color: rgb(25, 27, 27) !important;
+    border: 1px solid rgb(174, 33, 106) !important;
+    border-radius: 5px !important;
+}
+
+.tabbrowser-tab:not([selected]) .tab-content{
+    color: rgb(174, 33, 106) !important;
+}
+
+.tabbrowser-tab{
+    min-height: 35px !important;
+    max-height: 35px !important;
+}
+
+.bookmark-item:hover {
+    border: 0.2px solid rgb(174, 33, 106) !important;
+    border-radius: 50px !important;
+    background: transparent !important;
+}
+
+.bookmark-item{
+    border: 1px solid transparent !important;
+}
+
+#customizableui-special-spring95{
+    min-width: 30px !important;
+    max-width: 30px !important;
+}
+
+
+
+#customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
+
+/* #PersonalToolbar{
+    margin-top: 1px !important;
+} */
+
+#urlbar-container:not(:focus-within){
+    opacity: 0 !important;
+    display: 0 !important;
+    min-height: 10px !important;
+    max-height: 10px !important;
+}
+
+#TabsToolbar{
+    background: rgb(25, 27, 27) !important;
+}
+
+
+/* Autohide Navbar */
+/* #nav-bar:not([customizing="true"]):not([inFullscreen]) {
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    transition: all 0.1s ease !important;
+    z-index: -100 !important;
+} */
+
+#nav-bar:not(:focus-within) {
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    z-index: -100 !important;
+}
+
+
+
+/* #navigator-toolbox:hover:not([inFullscreen]) :-moz-any(#nav-bar), */
+#navigator-toolbox:focus-within :-moz-any(#nav-bar){
+    /* min-height: 30px !important;
+    max-height: 30px !important;
+    margin-top: 30px !important; */
+    /* margin-bottom: 30px !important; */
+    transition: all 0.2s ease !important;
+    z-index: 100 !important;
+}
+
+#urlbar-container{
+    /* padding-top: 2px !important; */
+    /* padding-bottom: 2px !important; */
+    /* margin-top: 2px !important; */
+    /* margin-bottom: 2px !important; */
+    /* min-height: 20px !important; */
+    /* max-height: 20px !important; */
+    /* opacity: 1 !important; */
+}
+/* #urlbar-input-container{
+    padding-top: -0px !important;
+    padding-bottom: -5px !important;
+    margin-top: -0px !important;
+} */
+
+/* #navigator-toolbox, #navigator-toolbox:not([inFullscreen]){
+    height: 10px !important;
+    opacity: 0 !important;
+    opacity: transparent !important;
+    transition: all 0.5s ease 1.5s !important;
+}
+
+#navigator-toolbox:not([inFullscreen]):hover, #urlbar-input-container:focus-within:focus-visible, #PersonalToolbar:focus-within:focus{
+    visibility: visible !important;
+    margin-top: 1px !important;
+    margin-bottom: 2px !important;
+    height: 39px !important;
+    opacity: 1 !important;
+    transition: all 0.1s ease !important;
+    z-index: 99 !important;
+} */

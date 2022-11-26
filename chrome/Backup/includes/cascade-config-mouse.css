@@ -15,16 +15,10 @@
    *  0 places directly in the corner
    */ --uc-status-panel-spacing: 12px;
 
+    --proton-tab-block-margin: 0 !important; 
+    --tab-block-margin: 0 !important; 
+
 }
-
-
-/* remove window control buttons */
-.titlebar-buttonbox-container { display: inherit !important; }
-
-
-#pageActionButton { display: none !important; }
-
-
 
 
 /*---+---+---+---+---+---+---+
@@ -47,33 +41,7 @@
 
 }
 
-#back-button, #forward-button, 
-#reload-button, #home-button, 
-#nav-bar-overflow-button, #urlbar-go-button
-{
-  display:none!important; 
-}
-
-#private-browsing-indicator-with-label > label {display: none !important;}
-
-#nav-bar {
-  --navbar-margin: -20px;
-
-  margin-top: var(--navbar-margin);
-  margin-bottom: 0;
-  z-index: -100;
-  transition: all 0.1s ease !important;
-  opacity: 0;
-}
-
-#navigator-toolbox:focus-within > #nav-bar
-{
-  margin-top: 0;
-  margin-bottom: var(--navbar-margin);
-  z-index: 50;
-  opacity: 1;
-}
-
+/* #nav-bar{ box-shadow: 0 1px 0 white !important; */
 
 /*---+---+---+---+---+---+---+
  | U | R | L | — | B | A | R |
@@ -86,7 +54,10 @@
    *  If enabled the max-width is applied on focus
    *  otherwise the URL Bar will always be it's min-width
    */ --uc-urlbar-min-width: 0vw;
-      --uc-urlbar-max-width: 0vw;
+      --uc-urlbar-max-width: 40vw;
+      --uc-urlbar-max-height: 35px
+      /* --uc-urlbar-max-height: 0vw;
+      --uc-urlbar-min-height: 0vw; */
 
   /*  Position of the URL Bar
    *  possible values:
@@ -110,13 +81,6 @@
 
 /* Hide everything BUT the zoom indicator within the URL Bar */
 #page-action-buttons > :not(#urlbar-zoom-button):not(#star-button-box) { display: none !important; }
-
-
-/* Hide the »Go«-arrow in the URL Bar */
-
-
-
-
 
 
 /*---+---+---+---+---+---+---+
@@ -160,7 +124,3 @@
 /* Hide the secondary Tab Label
  * e.g. playing indicator (the text, not the icon) */
 .tab-secondary-label { display: none !important; }
-
-.tabbrowser-tab:not([selected]) .tab-content{
-  color: rgb(174, 33, 106) !important;
-}
