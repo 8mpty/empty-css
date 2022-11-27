@@ -22,31 +22,35 @@
     display: none !important; 
 }
 
-.tab-background{ 
-    border-radius: 0 !important; 
-}
+/* Tab Border Color */
 
-.tab-background[selected]{
+.tab-content[selected="true"]{
     background: var(--toolbar-bgcolor) !important;
     background-color: rgb(25, 27, 27) !important;
     border: 2px solid rgb(174, 33, 106) !important;
     border-radius: 10px !important;
-
     border-top-left-radius: 10px !important;
     border-top-right-radius: 10px !important;
-    /* border-bottom: inherit !important; */
+    /* max-width: 35px !important; min-width: 35px !important; */
 }
+
 
 .tabbrowser-tab{
     padding-top: 2px !important;
     padding-bottom: 2px !important;
     /* max-width: 35px !important; min-width: 35px !important; */
-    max-width: 10vw !important; min-width: 10vw !important;
+    max-width: 11vw !important; min-width: 11vw !important;
 }
+
+/* .tab-content[selected="true"]:hover{
+    max-width: 11vw !important; min-width: 11vw !important;
+} */
 
 .tabbrowser-tab:not([selected]) .tab-content{
     color: rgb(174, 33, 106) !important;
     background-color: rgb(25, 27, 27) !important;
+    border: 0px !important;
+    border-radius: 0px !important;
 }
 .tabbrowser-tab:not([selected]) .tab-content:hover{
     color: rgb(174, 33, 106) !important;
@@ -54,28 +58,18 @@
     background-color: rgb(25, 27, 27) !important;
 }
 
-
-
 .tabbrowser-tab:not([selected]){
     /* Just to show icon */
     max-width: 35px !important; min-width: 35px !important;
     
-
     /* Make inactive tabs visible without hiding */
-    /* max-width: 10vw !important; min-width: 10vw !important; */
+    /* max-width: 11vw !important; min-width: 11vw !important; */
 }
 
-.tabbrowser-tab:not([selected]):hover{
-    border-radius: 5px !important;
-    padding-top: 1px !important;
-    padding-bottom: 1px !important;
-    
+.tabbrowser-tab:not([selected]):hover{    
     /* Comment out if you would not want to preview tab contents when hover */
-    max-width: 10vw !important; min-width: 10vw !important;
+    max-width: 11vw !important; min-width: 11vw !important;
 }
-
-
-
 
 .bookmark-item:hover {
     border: 0.2px solid rgb(174, 33, 106) !important;
@@ -169,7 +163,8 @@ menupopup {
     opacity: transparent !important;
 }
 
-#navigator-toolbox:not([inFullscreen]):hover, #urlbar-input-container:focus-within:focus-visible, #PersonalToolbar:focus-within:focus{
+#navigator-toolbox:not([inFullscreen]):hover, #urlbar-input-container:focus-within:focus-visible, 
+#PersonalToolbar:focus-within:focus{
     visibility: visible !important;
     margin-top: 1px !important;
     margin-bottom: 2px !important;
