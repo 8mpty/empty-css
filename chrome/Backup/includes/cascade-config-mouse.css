@@ -54,8 +54,7 @@
    *  If enabled the max-width is applied on focus
    *  otherwise the URL Bar will always be it's min-width
    */ --uc-urlbar-min-width: 0vw;
-      --uc-urlbar-max-width: 40vw;
-      --uc-urlbar-max-height: 35px
+      --uc-urlbar-max-width: 50vw;
       /* --uc-urlbar-max-height: 0vw;
       --uc-urlbar-min-height: 0vw; */
 
@@ -92,8 +91,11 @@
 
   /*  Allow tabs to have dynamic widths based on
    *  the Tab Bars maximum width
-   */ --uc-active-tab-width:   clamp(100px, 20vw, 200px);
-      --uc-inactive-tab-width: clamp(100px, 10vw, 100px);
+   */ 
+      /* --uc-active-tab-width:   clamp(100px, 20vw, 200px); */
+      --uc-active-tab-width:   clamp(100px, 30vw, 200px);
+      --uc-inactive-tab-width: clamp(0px, 0px, 0px);
+      
 
 
   /*  Enable this to always show the Tab Close button
@@ -112,14 +114,13 @@
   /*  Left and Right "dip" of the container indicator
    *  0px equals tab width
    *  higer values make the indicator smaller
-   */ --container-tabs-indicator-margin: 10px;
+   */ --container-tabs-indicator-margin: 15px;
 
   /*  Amount of Glow to add to the container indicator
    *  Setting it to 0 disables the Glow
    */ --uc-identity-glow: 0 1px 10px 1px;
 
 }
-
 
 /* Hide the secondary Tab Label
  * e.g. playing indicator (the text, not the icon) */

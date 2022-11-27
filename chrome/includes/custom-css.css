@@ -29,8 +29,12 @@
 .tab-background[selected]{
     background: var(--toolbar-bgcolor) !important;
     background-color: rgb(25, 27, 27) !important;
-    border: 1px solid rgb(174, 33, 106) !important;
-    border-radius: 5px !important;
+    border: 2px solid rgb(174, 33, 106) !important;
+    border-radius: 10px !important;
+
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    /* border-bottom: inherit !important; */
 }
 
 .tabbrowser-tab{
@@ -42,7 +46,15 @@
 
 .tabbrowser-tab:not([selected]) .tab-content{
     color: rgb(174, 33, 106) !important;
+    background-color: rgb(25, 27, 27) !important;
 }
+.tabbrowser-tab:not([selected]) .tab-content:hover{
+    color: rgb(174, 33, 106) !important;
+    border: none !important;
+    background-color: rgb(25, 27, 27) !important;
+}
+
+
 
 .tabbrowser-tab:not([selected]){
     /* Just to show icon */
@@ -95,7 +107,9 @@ menupopup {
     padding-top: 8px !important;
 }
 
-#customizableui-special-spring95{
+#customizableui-special-spring95,
+#customizableui-special-spring23
+{
     margin-top: 14px !important;
     margin-bottom: 14px !important;
     

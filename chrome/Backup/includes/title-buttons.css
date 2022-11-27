@@ -9,9 +9,9 @@
 
 /* spaces between buttons */
 .titlebar-button {
-    padding-left: 13px !important;
-    padding-right: 13px !important;
-    /* padding-top: 10px !important; */
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 6px !important;
 }
 
 /*-----------------------------------------*/
@@ -22,10 +22,10 @@
 }
 
 .titlebar-min:hover {
-    /* margin-top: 3px !important; */
-    /* margin-bottom: 3px !important; */
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
     background-color: rgb(41, 41, 41) !important;
-    /* border-radius: 50% !important; */
+    border-radius: 50% !important;
 }
 
 /* maximize button */
@@ -34,10 +34,10 @@
 }
 
 .titlebar-max:hover {
-    /* margin-top: 3px !important; */
-    /* margin-bottom: 3px !important; */
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
     background-color: rgb(41, 41, 41) !important;
-    /* border-radius: 50% !important; */
+    border-radius: 50% !important;
 }
 
 /* Restore Button */
@@ -46,10 +46,10 @@
 }
 
 .titlebar-restore:hover{
-    /* margin-top: 3px !important; */
-    /* margin-bottom: 3px !important; */
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
     background-color: rgb(41, 41, 41) !important;
-    /* border-radius: 50% !important; */
+    border-radius: 50% !important;
 }
 
 /* close button */
@@ -58,9 +58,9 @@
 }
 
 .titlebar-close:hover {
-    /* margin-top: 3px !important; */
-    /* margin-bottom: 3px !important; */
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
     background-color: rgb(174, 33, 106) !important;
-    /* border-radius: 50% !important; */
+    border-radius: 50% !important;
 }
 
