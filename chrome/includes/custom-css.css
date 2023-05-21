@@ -7,7 +7,7 @@
 :root:not([chromehidden~="toolbar"]){
     /* min-width: 1090px !important; */
     max-width: 1090px !important;
-    max-height: 614zpx !important;
+    max-height: 614px !important;
     /* min-height: 618px !important;s */
 }
 
