@@ -1,5 +1,6 @@
 /* div.showPrivate.showSearch.container */
-@-moz-document url("about:home"), url("about:blank"), url("about:newtab"), url("about:privatebrowsing"){
+@-moz-document url("about:home"), url("about:blank"), 
+url("about:newtab"), url("about:privatebrowsing"){
     
     .showPrivate.showSearch.container { 
         display: none !important; 
