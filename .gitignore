@@ -7,15 +7,11 @@
 # Do not ignore specific folder
 !/chrome
 
-# Ignore specific folder
-# /chrome/*
-/chrome/Backup/*
-/chrome/html/*
+# Ignore everything in specific folder
+/chrome/*
 
 # Do not ignore specific folders and files
 !/chrome/backgrounds
-!/chrome/Backup
 !/chrome/includes
 !/chrome/userChrome.css
 !/chrome/userContent.css
-# !/chrome/html
