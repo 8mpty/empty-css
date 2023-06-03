@@ -1,75 +1,159 @@
-/**
- * Make #navigator-toolbox float over page content in maximized window and fullscreen modes
- * Original code provided by am803
- * https://www.reddit.com/r/FirefoxCSS/comments/bhbvhj/make_navigatortoolbox_appear_on_top_of_page/elrzrq3/
- */
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_tabstoolbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
 
-/* Disable native toggler that triggers JS listener */
-#fullscr-toggler {
-  pointer-events: none;
+/* Hide tabs unless cursor is on top of toolbar */
+
+:root:not([customizing]) #navigator-toolbox {
+    position: relative;
+    z-index: 1;
 }
 
-/* Force bgcolor to prevent transparent tabbar */
+#navigator-toolbox:not(:hover)>#titlebar {
+    -moz-window-dragging: no-drag !important;
+    pointer-events: none
+}
+
+:root:not([customizing]) #navigator-toolbox:hover,
+:root:not([customizing]) #titlebar {
+    margin-bottom: calc(0px - 2 * var(--tab-block-margin) - var(--tab-min-height));
+}
+
+#TabsToolbar:not([customizing]) {
+    visibility: hidden;
+    transition: visibility 0ms linear 200ms
+}
+
+#navigator-toolbox,
+#titlebar {
+    transition: margin-bottom 48ms ease-out 200ms
+}
+
+#navigator-toolbox:hover {
+    transition-delay: 0s
+}
+
+#navigator-toolbox:hover>#titlebar {
+    margin-bottom: 0px;
+    transition-delay: 0s;
+}
+
+#navigator-toolbox:hover #TabsToolbar {
+    visibility: visible;
+    transition-delay: 18ms
+}
+
+/* These rules make sure that height of tabs toolbar doesn't exceed tab-min-height */
+#tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
+    max-height: var(--tab-min-height);
+}
+
+.tab-label {
+    line-height: 20px !important;
+}
+
+:root[uidensity="compact"] .tab-label {
+    line-height: 18px !important;
+}
+
+
+
+
+
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_toolbox.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Hide the whole toolbar area unless urlbar is focused or cursor is over the toolbar */
+/* Dimensions on non-Win10 OS probably needs to be adjusted */
+
+/* Compatibility options for hide_tabs_toolbar.css and tabs_on_bottom.css at the end of this file */
+
+:root {
+    --uc-autohide-toolbox-delay: 200ms;
+    /* Wait 0.1s before hiding toolbars */
+    --uc-toolbox-rotation: 82deg;
+    /* This may need to be lower on mac - like 75 or so */
+}
+
+:root[sizemode="maximized"] {
+    --uc-toolbox-rotation: 88.5deg;
+}
+
+@media (-moz-platform: windows) {
+    #navigator-toolbox:not(:-moz-lwtheme) {
+        background-color: -moz-dialog !important;
+    }
+}
+
+:root[sizemode="fullscreen"],
+#navigator-toolbox[inFullscreen] {
+    margin-top: 0 !important;
+}
+
+#navigator-toolbox {
+    position: fixed !important;
+    display: block;
+    background-color: var(--lwt-accent-color, black) !important;
+    transition: transform 82ms linear, opacity 82ms linear !important;
+    transition-delay: var(--uc-autohide-toolbox-delay) !important;
+    transform-origin: top;
+    transform: rotateX(var(--uc-toolbox-rotation));
+    opacity: 0;
+    line-height: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* #mainPopupSet:hover ~ box > toolbox, */
+/* Uncomment the above line to make toolbar visible if some popup is hovered */
+#navigator-toolbox:hover,
+#navigator-toolbox:focus-within {
+    transition-delay: 33ms !important;
+    transform: rotateX(0);
+    opacity: 1;
+}
+
+#navigator-toolbox>* {
+    line-height: normal;
+    pointer-events: auto
+}
+
+#navigator-toolbox,
+#navigator-toolbox>* {
+    width: 100vw;
+    -moz-appearance: none !important;
+}
+
+/* These two exist for oneliner compatibility */
+#nav-bar {
+    width: var(--uc-navigationbar-width, 100vw)
+}
+
 #TabsToolbar {
-    background-color: var(--lwt-accent-color) !important;
+    width: calc(100vw - var(--uc-navigationbar-width, 0px))
 }
 
-/* Allow registering hover state over toolbars */
-:root:not([sizemode="normal"])
-  :-moz-any(#TabsToolbar, #nav-bar, #PersonalToolbar) {
-  -moz-window-dragging: no-drag !important;
+/* Don't apply transform before window has been fully created */
+:root:not([sessionrestored]) #navigator-toolbox {
+    transform: none !important
 }
 
-:root:not([sizemode="normal"]):not([customizing]) #navigator-toolbox {
-  margin-top: calc(-27.8px - var(--tab-min-height)) !important;
-  transition: all 0.52s ease 0.4s !important;
-  z-index: 1;
+:root[customizing] #navigator-toolbox {
+    position: relative !important;
+    transform: none !important;
+    opacity: 1 !important;
 }
 
-:root:not([sizemode="normal"]):not([customizing]) #navigator-toolbox::after {
-  height: 2px;
-  visibility: hidden !important;
-  opacity: 0 !important;
+#navigator-toolbox[inFullscreen]>#PersonalToolbar,
+#PersonalToolbar[collapsed="true"] {
+    display: none
 }
 
-:root[customizing] #navigator-toolbox,
-  :root:not([sizemode="normal"]):not([customizing]) #navigator-toolbox:focus-within,
-  :root:not([sizemode="normal"]):not([customizing]) #navigator-toolbox:hover
-  /*:root:not([sizemode="normal"]):not([customizing]) #mainPopupSet:focus-within ~ #navigator-toolbox,
-  :root:not([sizemode="normal"]):not([customizing]) #mainPopupSet:hover ~ #navigator-toolbox */ {
-  margin-top: 0 !important;
-  transition-delay: 0s !important;
-}
+/* Uncomment this if tabs toolbar is hidden with hide_tabs_toolbar.css */
+/*#titlebar{ margin-bottom: -9px }*/
 
-:root:not([sizemode="normal"]):not([customizing]) #navigator-toolbox:focus-within::after,
-  :root:not([sizemode="normal"]):not([customizing]) #navigator-toolbox:hover::after
-  /*:root:not([sizemode="normal"]):not([customizing]) #mainPopupSet:focus-within ~ #navigator-toolbox::after,
-    :root:not([sizemode="normal"]):not([customizing]) #mainPopupSet:hover ~ #navigator-toolbox::after */ {
-  height: 30px;
-}
-
-:root:not([sizemode="normal"]):not([customizing]) #browser {
-  position: fixed;
-  z-index: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-:root:not([sizemode="normal"]):not([customizing]) #browser > #appcontent {
-  width: 100%;
-  height: 100%;
-}
-
-/* Fix strange 10px shift while not in fullscreen mode */
-:root:not([inFullscreen]) #browser {
-  top: 8px !important;
-  height: calc(100% - 10px) !important;
-}
-
-/* Win8: To match non-fullscreen #titlebar-buttonbox-container */
-@media (-moz-os-version: windows-win8) {
-  #window-controls {
-    margin-inline-start: 8px;
-  }
-}
+/* Uncomment the following for compatibility with tabs_on_bottom.css - this isn't well tested though */
+/*
+  #navigator-toolbox{ flex-direction: column; display: flex; }
+  #titlebar{ order: 2 }
+  */

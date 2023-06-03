@@ -1,0 +1,26 @@
+:root {
+    --pink-color: #ae216a !important;
+}
+
+/* remove window control buttons */
+.titlebar-buttonbox-container {
+    /* display: none !important; */
+    display: inherit !important;
+}
+
+.titlebar-restore,
+.titlebar-max,
+.titlebar-close {
+    visibility: collapse !important;
+    transition: all 1s ease !important;
+}
+
+.titlebar-buttonbox-container:hover .titlebar-restore,
+.titlebar-buttonbox-container:hover .titlebar-max,
+.titlebar-buttonbox-container:hover .titlebar-close {
+    visibility: visible !important;
+}
+
+.titlebar-close:hover {
+    background: var(--pink-color) !important;
+}

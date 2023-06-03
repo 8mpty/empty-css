@@ -1,22 +1,4 @@
-/* @import 'includes/cascade-config-mouse.css'; */
-/* @import 'includes/cascade-colours.css'; */
-
-/* @import 'includes/cascade-layout.css'; */
-/* @import 'includes/cascade-responsive.css'; */
-/* @import 'includes/cascade-floating-panel.css'; */
-
+@import 'includes/windows-control-buttons.css';
 @import 'includes/cascade-nav-bar.css';
 @import 'includes/custom-css.css';
 /* @import 'includes/test.css'; */
-
-
-
-
-
-
-/* @import 'includes/custom-oneliner.css' */
-/* @import 'includes/cascade-tabs.css'; */
-/* @import "https://raw.githubusercontent.com/8mpty/firefox-css-custom/main/chrome/includes/custom-css.css"; */
-/* @import 'includes/title-buttons.css'; */
-/* @import 'includes/autohide-bookmarks.css'; */
-/* @import 'includes/autohide-tool.css'; */

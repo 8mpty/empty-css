@@ -1,30 +1,30 @@
 :root{
   --pink-color: #ae216a !important;
   --grey-color: rgb(15,15,15) !important;
+  --uc-navbar-transform: -40px !important;
+}
+
+:root[uidensity="compact"]{ 
+  --uc-navbar-transform: -34px !important;
 }
 
 #nav-bar {
-
   padding-block-start: 0px !important;
-
-  border:     none !important;
+  border: none !important;
   box-shadow: none !important;
-  /* background: transparent !important; */
-  /* background: var(--grey-color); */
-
 }
 
-#nav-bar.browser-toolbar {
+.browser-toolbar {
   background: var(--grey-color) !important;
 }
 
-#urlbar,
-#urlbar * {
-
+#urlbar * ,
+#urlbar{
   padding-block-start: 0px !important;
-
   outline: none !important;
   box-shadow: none !important;
+  background: var(--grey-color) !important;
+
 }
 
 
@@ -33,6 +33,14 @@
   background: var(--grey-color) !important;
 }
 
+/* #nav-bar:not(:focus-within) {
+  min-height: 0px !important;
+  max-height: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  z-index: -100 !important;
+  transition: all 0.3s ease !important;
+} */
 
 #urlbar[focused='true']
   > #urlbar-background,
@@ -41,8 +49,50 @@
 
 
 #urlbar[open]
-  > #urlbar-background { background: var(--grey-color) !important; }
+  > #urlbar-background { background: var(--grey-color) !important; } */
 
 .urlbarView-row[selected]{ 
   background: var(--grey-color) !important; 
 }
+
+
+/* https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/autohide_main_toolbar.css */
+#navigator-toolbox > div{ display: contents !important;}
+:root[sessionrestored] :where(#nav-bar,#PersonalToolbar,#tab-notification-deck,.global-notificationbox){
+  transform: translateY(var(--uc-navbar-transform)) !important;
+}
+:root:is([customizing],[chromehidden*="toolbar"]) :where(#nav-bar,#PersonalToolbar,#tab-notification-deck,.global-notificationbox){
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+#nav-bar:not([customizing]){
+  opacity: 0 !important;
+  transition: transform 400ms ease 500ms, opacity 400ms ease 500ms !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+#TabsToolbar{ position: relative !important; z-index: 3 !important;}
+
+/* Show when toolbox is focused, like when urlbar has received focus */
+#navigator-toolbox:focus-within > .browser-toolbar{
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  transition-duration: 500ms, 200ms !important;
+  transition-delay: 0s !important;
+}
+/* Show when toolbox is hovered */
+#titlebar:hover ~ .browser-toolbar,
+#nav-bar:hover,
+#nav-bar:hover + #PersonalToolbar{
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  transition-duration: 500ms, 200ms !important;
+  transition-delay: 0s !important;
+}
+
+/* Bookmarks toolbar needs so extra rules */
+#PersonalToolbar{ transition: transform 400ms ease 500ms !important; position: relative !important; z-index: 1 !important;}
+
+/* Move up the content view */
+:root[sessionrestored]:not([inFullscreen]) > body > #browser{ margin-top: var(--uc-navbar-transform) !important; }

@@ -1,10 +1,14 @@
-
 /* full-screen-api.ignore-widgets = true */
-:root{
+:root {
     --pink-color: #ae216a !important;
-    --grey-color: rgb(15,15,15) !important;
+    --grey-color: rgb(15, 15, 15) !important;
+    --sidebar-width: 0vw !important;
+    --panel-width: 100% !important;
+    --panel-hide-offset: -60px !important;
+    --opacity-when-hidden: 0.05 !important;
 }
-:root:not([chromehidden~="toolbar"]){
+
+:root:not([chromehidden~="toolbar"]) {
     /* min-width: 1090px !important; */
     /* min-height: 618px !important;s */
 
@@ -19,42 +23,20 @@
     scrollbar-width: 10px !important;
 }
 
-/* remove window control buttons */
-.titlebar-buttonbox-container { 
-    /* display: none !important; */
-    display: inherit !important;
-}
-
-.titlebar-restore, .titlebar-max, .titlebar-close{ 
-    visibility: collapse !important;
-
-}
-
-.titlebar-buttonbox-container:hover .titlebar-restore,
-.titlebar-buttonbox-container:hover .titlebar-max,
-.titlebar-buttonbox-container:hover .titlebar-close{
-    visibility: visible !important;
-}
-
-.titlebar-close:hover{
-    background: var(--pink-color) !important;
-}
-
-#back-button, 
-#forward-button, 
-#reload-button, 
-#home-button, 
+#back-button,
+#forward-button,
+#reload-button,
+#home-button,
 #alltabs-button,
 #urlbar-go-button,
 #pageActionButton,
-#private-browsing-indicator-with-label
-{
-    display: none !important; 
+#private-browsing-indicator-with-label {
+    display: none !important;
 }
 
 /* Tab Border Color */
 
-.tab-content[selected="true"]{
+.tab-content[selected="true"] {
     background: var(--toolbar-bgcolor) !important;
     background-color: var(--grey-color) !important;
     border: 2px solid var(--pink-color) !important;
@@ -65,39 +47,43 @@
 }
 
 
-.tabbrowser-tab{
+.tabbrowser-tab {
     padding-top: 2px !important;
     padding-bottom: 2px !important;
-    max-width: 11vw !important; min-width: 11vw !important;
+    max-width: 11vw !important;
+    min-width: 11vw !important;
 }
 
 /* .tab-content[selected="true"]:hover{
     max-width: 11vw !important; min-width: 11vw !important;
 } */
 
-.tabbrowser-tab:not([selected]) .tab-content{
+.tabbrowser-tab:not([selected]) .tab-content {
     color: var(--pink-color) !important;
-    background-color: var(--grey-color)!important;
+    background-color: var(--grey-color) !important;
     border: 0px !important;
     border-radius: 0px !important;
 }
-.tabbrowser-tab:not([selected]) .tab-content:hover{
+
+/* .tabbrowser-tab:not([selected]) .tab-content:hover {
     color: var(--pink-color) !important;
     border: none !important;
     background-color: var(--grey-color) !important;
-}
+} */
 
-.tabbrowser-tab:not([selected]){
+.tabbrowser-tab:not([selected]) {
     /* Just to show icon */
     /* max-width: 35px !important; min-width: 35px !important; */
-    
+
     /* Make inactive tabs visible without hiding */
-    max-width: 11vw !important; min-width: 11vw !important;
+    max-width: 11vw !important;
+    min-width: 11vw !important;
 }
 
-.tabbrowser-tab:not([selected]):hover{    
+.tabbrowser-tab:not([selected]):hover {
     /* Comment out if you would not want to preview tab contents when hover */
-    max-width: 11vw !important; min-width: 11vw !important;
+    max-width: 11vw !important;
+    min-width: 11vw !important;
 }
 
 .bookmark-item:hover {
@@ -108,7 +94,7 @@
     background-color: var(--toolbar-bgcolor) !important;
 }
 
-.bookmark-item{
+.bookmark-item {
     border: 1px solid transparent !important;
 }
 
@@ -124,51 +110,68 @@
     padding-top: 2px !important;
 }
 
-#PersonalToolbar{
+#PersonalToolbar {
     background: var(--grey-color) !important;
 }
 
-.titlebar-spacer{
+.titlebar-spacer {
     max-width: 5px !important;
     display: none !important;
 }
 
 /* https://stackoverflow.com/questions/5110249/wildcard-in-css-for-classes */
-*[id^='customizableui-special-spring']{
+*[id^='customizableui-special-spring'] {
     background: var(--pink-color) !important;
     border: 6.5px solid var(--grey-color) !important;
     border-radius: 50% !important;
     margin: 10px !important;
 }
 
-#navigator-toolbox > toolbar:not(#TabsToolbar):not(#toolbar-menubar) menupopup[placespopup] {
+#navigator-toolbox>toolbar:not(#TabsToolbar):not(#toolbar-menubar) menupopup[placespopup] {
     --moz-appearance: none !important;
     border: 0 !important;
     padding-top: 8px !important;
 }
 
-#customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
+#customization-panelWrapper>.panel-arrowbox>.panel-arrow {
+    margin-inline-end: initial !important;
+}
 
-#urlbar-container:not(:focus-within){
+/* #urlbar-container:not(:focus-within) {
     opacity: 0 !important;
     display: 0 !important;
     min-height: 10px !important;
     max-height: 10px !important;
-}
+} */
 
-#TabsToolbar{
+#TabsToolbar {
     background: var(--grey-color) !important;
+    /* visibility: collapse; */
 }
 
-#urlbar-input-container{
-    padding-top: 2px !important;
+/* #urlbar-input-container {
+    padding-top: 0px !important;
     padding-bottom: 0px !important;
-}
+} */
 
-#nav-bar:not(:focus-within) {
-    min-height: 0px !important;
-    max-height: 0px !important;
-    margin-top: 0px !important;
+
+
+/* #nav-bar {
+    --navbar-margin: 0px;
+
+    margin-top: var(--navbar-margin);
     margin-bottom: 0px !important;
     z-index: -100 !important;
-}
+    transition: all 0.3s ease !important;
+    opacity: 0 !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+} */
+
+/* #navigator-toolbox:focus-within>#nav-bar,
+#navigator-toolbox:hover>#nav-bar {
+    margin-top: 0px !important;
+    margin-bottom: var(--navbar-margin);
+    z-index: 100 !important;
+    opacity: 1 !important;
+} */
+
