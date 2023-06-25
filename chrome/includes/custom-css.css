@@ -1,6 +1,7 @@
 /* full-screen-api.ignore-widgets = true */
 :root {
     --pink-color: #ae216a !important;
+    --dark-pink-color: #8f0c4f !important;
     --grey-color: rgb(15, 15, 15) !important;
     --sidebar-width: 0vw !important;
     --panel-width: 100% !important;
@@ -39,24 +40,24 @@
 .tab-content[selected="true"] {
     background: var(--toolbar-bgcolor) !important;
     background-color: var(--grey-color) !important;
-    border: 2px solid var(--pink-color) !important;
-    border-radius: 10px !important;
-    border-top-left-radius: 10px !important;
-    border-top-right-radius: 10px !important;
+    /* border: 2px solid var(--pink-color) !important; */
+    /* border-radius: 10px !important; */
+    /* border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important; */
     /* max-width: 35px !important; min-width: 35px !important; */
+    /* border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important; */
+}
+.tabbrowser-tab:not([selected]){
+    background: var(--toolbar-bgcolor) !important;
+    background-color: var(--grey-color) !important;
+    /* border: 2px solid var(--pink-color) !important; */
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    /* border-bottom: 2px solid var(--pink-color) !important; */
 }
 
-
-.tabbrowser-tab {
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
-    max-width: 11vw !important;
-    min-width: 11vw !important;
-}
-
-/* .tab-content[selected="true"]:hover{
-    max-width: 11vw !important; min-width: 11vw !important;
-} */
 
 .tabbrowser-tab:not([selected]) .tab-content {
     color: var(--pink-color) !important;
@@ -65,26 +66,13 @@
     border-radius: 0px !important;
 }
 
-/* .tabbrowser-tab:not([selected]) .tab-content:hover {
-    color: var(--pink-color) !important;
-    border: none !important;
+.tabbrowser-tab[selected="true"] .tab-content {
+    color: white !important;
     background-color: var(--grey-color) !important;
-} */
-
-.tabbrowser-tab:not([selected]) {
-    /* Just to show icon */
-    /* max-width: 35px !important; min-width: 35px !important; */
-
-    /* Make inactive tabs visible without hiding */
-    max-width: 11vw !important;
-    min-width: 11vw !important;
+    border: 0px !important;
+    border-radius: 0px !important;
 }
 
-.tabbrowser-tab:not([selected]):hover {
-    /* Comment out if you would not want to preview tab contents when hover */
-    max-width: 11vw !important;
-    min-width: 11vw !important;
-}
 
 .bookmark-item:hover {
     border: 0.2px solid var(--pink-color) !important;
@@ -122,9 +110,9 @@
 /* https://stackoverflow.com/questions/5110249/wildcard-in-css-for-classes */
 *[id^='customizableui-special-spring'] {
     background: var(--pink-color) !important;
-    border: 6.5px solid var(--grey-color) !important;
+    border: 7px solid var(--grey-color) !important;
     border-radius: 50% !important;
-    margin: 10px !important;
+    margin: 8px !important;
 }
 
 #navigator-toolbox>toolbar:not(#TabsToolbar):not(#toolbar-menubar) menupopup[placespopup] {
@@ -137,41 +125,13 @@
     margin-inline-end: initial !important;
 }
 
-/* #urlbar-container:not(:focus-within) {
-    opacity: 0 !important;
-    display: 0 !important;
-    min-height: 10px !important;
-    max-height: 10px !important;
-} */
 
 #TabsToolbar {
     background: var(--grey-color) !important;
     /* visibility: collapse; */
 }
 
-/* #urlbar-input-container {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-} */
-
-
-
-/* #nav-bar {
-    --navbar-margin: 0px;
-
-    margin-top: var(--navbar-margin);
-    margin-bottom: 0px !important;
-    z-index: -100 !important;
-    transition: all 0.3s ease !important;
-    opacity: 0 !important;
-    background-color: rgba(0, 0, 0, 0.8) !important;
-} */
-
-/* #navigator-toolbox:focus-within>#nav-bar,
-#navigator-toolbox:hover>#nav-bar {
-    margin-top: 0px !important;
-    margin-bottom: var(--navbar-margin);
-    z-index: 100 !important;
-    opacity: 1 !important;
-} */
-
+.tabbrowser-tab[fadein]:not([pinned]) {
+    max-width: none !important;
+    overflow: hidden
+  }
