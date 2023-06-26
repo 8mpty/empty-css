@@ -1,8 +1,4 @@
-:root{
-  --pink-color: #ae216a !important;
-  --grey-color: rgb(15,15,15) !important;
-  --uc-navbar-transform: -40px !important;
-}
+@import './consts.css';
 
 :root[uidensity="compact"]{ 
   --uc-navbar-transform: -34px !important;

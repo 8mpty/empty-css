@@ -1,0 +1,11 @@
+:root {
+    --pink-color: #ae216a !important;
+    --dark-pink-color: #8f0c4f !important;
+    --grey-color: rgb(15, 15, 15) !important;
+    --sidebar-width: 0vw !important;
+    --panel-width: 100% !important;
+    --panel-hide-offset: -60px !important;
+    --opacity-when-hidden: 0.05 !important;
+    --uc-navbar-transform: -40px !important;
+    --space-margin: 3%;
+}

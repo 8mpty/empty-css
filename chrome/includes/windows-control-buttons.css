@@ -1,6 +1,4 @@
-:root {
-    --pink-color: #ae216a !important;
-}
+@import './consts.css';
 
 /* remove window control buttons */
 .titlebar-buttonbox-container {

@@ -1,13 +1,5 @@
 /* full-screen-api.ignore-widgets = true */
-:root {
-    --pink-color: #ae216a !important;
-    --dark-pink-color: #8f0c4f !important;
-    --grey-color: rgb(15, 15, 15) !important;
-    --sidebar-width: 0vw !important;
-    --panel-width: 100% !important;
-    --panel-hide-offset: -60px !important;
-    --opacity-when-hidden: 0.05 !important;
-}
+@import './consts.css';
 
 :root:not([chromehidden~="toolbar"]) {
     /* min-width: 1090px !important; */
@@ -47,6 +39,11 @@
     /* max-width: 35px !important; min-width: 35px !important; */
     /* border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important; */
+    /* border-top: 2px solid var(--grey-color) !important;
+    border-right: 2px solid var(--grey-color) !important;
+    border-left: 2px solid var(--grey-color) !important; */
+    /* border-bottom: 2px solid var(--pink-color) !important; */
+    border-top: 2px solid var(--pink-color) !important;
 }
 .tabbrowser-tab:not([selected]){
     background: var(--toolbar-bgcolor) !important;
@@ -69,8 +66,8 @@
 .tabbrowser-tab[selected="true"] .tab-content {
     color: white !important;
     background-color: var(--grey-color) !important;
-    border: 0px !important;
-    border-radius: 0px !important;
+    /* border: 0px !important;
+    border-radius: 0px !important; */
 }
 
 
@@ -134,4 +131,17 @@
 .tabbrowser-tab[fadein]:not([pinned]) {
     max-width: none !important;
     overflow: hidden
-  }
+}
+
+/* https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class */
+#tabbrowser-arrowscrollbox > .tabbrowser-tab{
+    margin-left: var(--space-margin) !important;  
+}
+
+#tabbrowser-arrowscrollbox > :last-child{
+    margin-right: var(--space-margin) !important;  
+}
+
+#tabbrowser-arrowscrollbox > .tabbrowser-tab ~ .tabbrowser-tab{
+    margin: 0% !important;
+}
