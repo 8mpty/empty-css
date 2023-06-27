@@ -32,7 +32,7 @@
 .tab-content[selected="true"] {
     background: var(--toolbar-bgcolor) !important;
     background-color: var(--grey-color) !important;
-    border: 3px solid var(--pink-color) !important;
+    border: 2px solid var(--pink-color) !important;
     border-radius: 10px !important;
     /* border-top-left-radius: 10px !important;
     border-top-right-radius: 10px !important; */
