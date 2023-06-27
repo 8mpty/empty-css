@@ -32,8 +32,8 @@
 .tab-content[selected="true"] {
     background: var(--toolbar-bgcolor) !important;
     background-color: var(--grey-color) !important;
-    border: 2px solid var(--pink-color) !important;
-    border-radius: 10px !important;
+    /* border: 2px solid var(--pink-color) !important; */
+    /* border-radius: 10px !important; */
     /* border-top-left-radius: 10px !important;
     border-top-right-radius: 10px !important; */
     /* max-width: 35px !important; min-width: 35px !important; */
@@ -42,8 +42,7 @@
     /* border-top: 2px solid var(--grey-color) !important;
     border-right: 2px solid var(--grey-color) !important;
     border-left: 2px solid var(--grey-color) !important; */
-    /* border-bottom: 2px solid var(--pink-color) !important; */
-    /* border-bottom: 2px solid var(--pink-color) !important; */
+    border-bottom: 2px solid var(--pink-color) !important;
 }
 .tabbrowser-tab:not([selected]){
     background: var(--toolbar-bgcolor) !important;
