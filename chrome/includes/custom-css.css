@@ -29,20 +29,20 @@
 
 /* Tab Border Color */
 
-.tab-content[selected="true"] {
+.tabbrowser-tab[selected="true"] {
     background: var(--toolbar-bgcolor) !important;
     background-color: var(--grey-color) !important;
     /* border: 2px solid var(--pink-color) !important; */
     /* border-radius: 10px !important; */
-    /* border-top-left-radius: 10px !important;
-    border-top-right-radius: 10px !important; */
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
     /* max-width: 35px !important; min-width: 35px !important; */
     /* border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important; */
-    /* border-top: 2px solid var(--grey-color) !important;
-    border-right: 2px solid var(--grey-color) !important;
-    border-left: 2px solid var(--grey-color) !important; */
-    border-bottom: 2px solid var(--pink-color) !important;
+    border-top: 2px solid var(--pink-color) !important;
+    border-right: 2px solid var(--pink-color) !important;
+    border-left: 2px solid var(--pink-color) !important;
+    /* border-bottom: 2px solid var(--pink-color) !important; */
 }
 .tabbrowser-tab:not([selected]){
     background: var(--toolbar-bgcolor) !important;
@@ -51,15 +51,15 @@
     border-top: none !important;
     border-left: none !important;
     border-right: none !important;
-    /* border-bottom: 2px solid var(--pink-color) !important; */
+    border-bottom: 2px solid var(--pink-color) !important;
 }
 
 
 .tabbrowser-tab:not([selected]) .tab-content {
     color: var(--pink-color) !important;
     background-color: var(--grey-color) !important;
-    border: 0px !important;
-    border-radius: 0px !important;
+    /* border: 0px !important;
+    border-radius: 0px !important; */
 }
 
 .tabbrowser-tab[selected="true"] .tab-content {
@@ -68,7 +68,6 @@
     /* border: 0px !important;
     border-radius: 0px !important; */
 }
-
 
 .bookmark-item:hover {
     border: 0.2px solid var(--pink-color) !important;
