@@ -3,6 +3,7 @@
 /* remove window control buttons */
 .titlebar-buttonbox-container {
     /* display: none !important; */
+    margin-top: 20px !important;
     display: inherit !important;
 }
 
@@ -10,7 +11,7 @@
 .titlebar-max,
 .titlebar-close {
     visibility: collapse !important;
-    transition: all 1s ease !important;
+    /* transition: all 1s ease !important; */
 }
 
 .titlebar-buttonbox-container:hover .titlebar-restore,

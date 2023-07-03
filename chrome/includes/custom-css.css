@@ -34,24 +34,26 @@
     background-color: var(--grey-color) !important;
     /* border: 2px solid var(--pink-color) !important; */
     /* border-radius: 10px !important; */
-    border-top-left-radius: 5px !important;
+    /* border-top-left-radius: 5px !important;
     border-top-right-radius: 5px !important;
+    border-top: 2px solid var(--pink-color) !important;
+    border-right: 2px solid var(--pink-color) !important;
+    border-left: 2px solid var(--pink-color) !important; */
     /* max-width: 35px !important; min-width: 35px !important; */
     /* border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important; */
-    border-top: 2px solid var(--pink-color) !important;
-    border-right: 2px solid var(--pink-color) !important;
-    border-left: 2px solid var(--pink-color) !important;
-    /* border-bottom: 2px solid var(--pink-color) !important; */
+
+    border-bottom: 2px solid var(--pink-color) !important;
 }
 .tabbrowser-tab:not([selected]){
     background: var(--toolbar-bgcolor) !important;
     background-color: var(--grey-color) !important;
     /* border: 2px solid var(--pink-color) !important; */
-    border-top: none !important;
+    /* border-top: none !important;
     border-left: none !important;
-    border-right: none !important;
-    border-bottom: 2px solid var(--pink-color) !important;
+    border-right: none !important; */
+    /* border-bottom: 2px solid var(--pink-color) !important; */
+    border-bottom: 0px solid !important;
 }
 
 
@@ -131,6 +133,10 @@
     overflow: hidden
 }
 
+
+
+
+
 /* https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class */
 #tabbrowser-arrowscrollbox > .tabbrowser-tab{
     margin-left: var(--space-margin) !important;  
@@ -142,4 +148,15 @@
 
 #tabbrowser-arrowscrollbox > .tabbrowser-tab ~ .tabbrowser-tab{
     margin: 0% !important;
+}
+
+
+
+
+.toolbar-items{
+    margin-top: 15px !important;
+}
+
+.tabbrowser-tab:not([selected]) .tab-content:hover{
+    background-color: var(--light-grey) !important;
 }
