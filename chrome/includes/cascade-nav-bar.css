@@ -1,11 +1,7 @@
 @import './consts.css';
 
-:root[uidensity="compact"]{ 
-  --uc-navbar-transform: -34px !important;
-}
-
 #nav-bar {
-  padding-block-start: 0px !important;
+  /* padding-block-start: 0px !important; */
   border: none !important;
   box-shadow: none !important;
 }
@@ -16,11 +12,10 @@
 
 #urlbar * ,
 #urlbar{
-  padding-block-start: 0px !important;
+  /* padding-block-start: 0px !important; */
   outline: none !important;
   box-shadow: none !important;
   background: var(--grey-color) !important;
-
 }
 
 
@@ -29,23 +24,15 @@
   background: var(--grey-color) !important;
 }
 
-/* #nav-bar:not(:focus-within) {
-  min-height: 0px !important;
-  max-height: 0px !important;
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  z-index: -100 !important;
-  transition: all 0.3s ease !important;
-} */
-
-#urlbar[focused='true']
-  > #urlbar-background,
-#urlbar:not([open])
-  > #urlbar-background { background: var(--grey-color) !important; }
+#urlbar[focused='true']> #urlbar-background, 
+#urlbar:not([open])> #urlbar-background { 
+  background: var(--grey-color) !important; 
+}
 
 
-#urlbar[open]
-  > #urlbar-background { background: var(--grey-color) !important; } */
+#urlbar[open]> #urlbar-background { 
+  background: var(--grey-color) !important; 
+}
 
 .urlbarView-row[selected]{ 
   background: var(--grey-color) !important; 

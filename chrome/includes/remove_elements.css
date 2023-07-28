@@ -1,0 +1,13 @@
+/* #back-button,
+#forward-button,
+#reload-button, */
+#home-button,
+#alltabs-button,
+#urlbar-go-button,
+#pageActionButton,
+#private-browsing-indicator-with-label,
+#star-button-box,
+.tab-background,
+.tab-icon-overlay {
+    display: none !important;
+}

@@ -1,0 +1,9 @@
+/* Ctrl + L to Launch URL Search Bar */
+#nav-bar:not(:focus-within) {
+    min-height: 0px !important;
+    max-height: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    z-index: -100 !important;
+    transition: all 0.3s ease !important;
+}

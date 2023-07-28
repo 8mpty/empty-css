@@ -1,0 +1,30 @@
+@import url(consts.css);
+
+#TabsToolbar {
+    margin-left: var(--navbarWidth) !important;
+}
+
+#nav-bar {
+    margin-right: calc(100vw - var(--navbarWidth)) !important;
+    height: var(--default-height) !important;
+}
+
+#urlbar-container {
+    min-width: 0px !important;
+}
+
+/* :root[uidensity="compact"] #nav-bar {
+    margin-top: -37px !important;
+    height: 37px !important;
+} */
+
+:root:not([uidensity="compact"]):not([uidensity="touch"]) #nav-bar {
+    /* margin-top: -44px !important;
+    height: 44px !important; */
+    margin-top: calc(-1 *var(--default-height)) !important /* Default Firefox Value */
+}
+
+/* :root[uidensity="touch"] #nav-bar {
+    margin-top: -49px !important;
+    height: 49px !important;
+} */

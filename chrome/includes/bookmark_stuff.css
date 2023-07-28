@@ -1,0 +1,13 @@
+@import url(consts.css);
+
+.bookmark-item:hover {
+    border: 0.2px solid var(--pink-color) !important;
+    border-radius: 50px !important;
+    background: transparent !important;
+    background: transparent !important;
+    background-color: var(--toolbar-bgcolor) !important;
+}
+
+.bookmark-item {
+    border: 1px solid transparent !important;
+}

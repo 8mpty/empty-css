@@ -1,0 +1,13 @@
+/* ShowContentsOnSelected */
+.tabbrowser-tab[selected="true"] .tab-content> :not(.tab-icon-stack){
+    display: flex !important;
+    margin-left: 5px !important;
+}
+
+.tabbrowser-tab[selected="true"], .tab-content{
+    -moz-box-flex: 1 !important; /* Fx <112 compatibility */
+    flex-grow: 100 !important;
+}
+.tabbrowser-tab, .tab-icon-stack>* {
+    margin-inline: 1 !important;
+}

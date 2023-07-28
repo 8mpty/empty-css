@@ -7,6 +7,10 @@
     --panel-hide-offset: -60px !important;
     --opacity-when-hidden: 0.05 !important;
     --uc-navbar-transform: -40px !important;
-    --space-margin: 30px;
+    --space-margin: 3vw !important;
     --light-grey: rgb(25, 25, 25) !important;
+    --navbarWidth: 40vw !important;
+    --animationSpeed: 0.5s !important;
+    --default-height: 40px !important;
+    --top-margin: 20px !important;
 }

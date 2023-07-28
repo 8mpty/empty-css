@@ -1,23 +1,29 @@
-@import './consts.css';
+@import url(consts.css);
 
 /* remove window control buttons */
 .titlebar-buttonbox-container {
     /* display: none !important; */
-    margin-top: 20px !important;
     display: inherit !important;
 }
 
-.titlebar-restore,
-.titlebar-max,
-.titlebar-close {
+/* Add Spacing To The Top */
+.toolbar-items, 
+.titlebar-buttonbox-container {
+    /* margin-top: var(--top-margin) !important; */
+}
+
+.titlebar-restore:not(:hover),
+.titlebar-max:not(:hover),
+.titlebar-close:not(:hover) {
     visibility: collapse !important;
-    /* transition: all 1s ease !important; */
+    transition: all 1s ease !important;
 }
 
 .titlebar-buttonbox-container:hover .titlebar-restore,
 .titlebar-buttonbox-container:hover .titlebar-max,
 .titlebar-buttonbox-container:hover .titlebar-close {
     visibility: visible !important;
+    transition: all 0s ease !important;
 }
 
 .titlebar-close:hover {
