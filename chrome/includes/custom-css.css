@@ -138,3 +138,8 @@
 .tab-icon-image {
     opacity: 1 !important;
 }
+
+/* Set URL Bar texts to center */
+.urlbar-input-box{
+    text-align: center !important;
+}
