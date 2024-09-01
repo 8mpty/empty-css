@@ -2,12 +2,27 @@
 #back-button,
 #reload-button, */
 #home-button,
-#alltabs-button,
+/* #alltabs-button, */
 #urlbar-go-button,
 #pageActionButton,
 #private-browsing-indicator-with-label,
 #star-button-box,
-.tab-background,
-.tab-icon-overlay {
+/* .tab-background, */
+.tab-icon-overlay,
+#unified-extensions-button,
+/* URL bar icons */
+#identity-permission-box,
+/* #star-button-box, */
+#identity-icon-box,
+#picture-in-picture-button,
+/* #tracking-protection-icon-container, */
+#reader-mode-button,
+#translations-button,
+#urlbar .search-one-offs {
     display: none !important;
+}
+
+/* Extension name inside URL bar */
+#identity-box.extensionPage #identity-icon-label {
+    visibility: collapse !important
 }

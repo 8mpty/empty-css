@@ -31,7 +31,8 @@
     /* max-width: 35px !important; min-width: 35px !important; */
     /* border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important; */
-    border-bottom: 2px solid var(--pink-color) !important;
+    /* border-bottom: 2px solid var(--pink-color) !important; */
+    border-top: 2px solid var(--pink-color) !important;
 }
 
 #navigator-toolbox {
@@ -112,11 +113,13 @@
 
 
 /* https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class */
-#tabbrowser-arrowscrollbox>.tabbrowser-tab, #scrollbutton-up {
+#tabbrowser-arrowscrollbox>.tabbrowser-tab,
+#scrollbutton-up {
     margin-left: var(--space-margin) !important;
 }
 
-#tabbrowser-arrowscrollbox> :last-child, #scrollbutton-down {
+#tabbrowser-arrowscrollbox> :last-child,
+#scrollbutton-down {
     margin-right: var(--space-margin) !important;
 }
 
@@ -127,7 +130,6 @@
 .tabbrowser-tab:not([selected]) .tab-content:hover {
     background-color: var(--light-grey) !important;
 }
-
 
 /* #nav-bar {
     position: relative !important;
@@ -143,3 +145,11 @@
 /* .urlbar-input-box{
     text-align: center !important;
 } */
+
+#titlebar {
+    :root[tabsintitlebar] & {
+        &:-moz-window-inactive {
+            opacity: 100 !important;
+        }
+    }
+}

@@ -1,24 +1,13 @@
-/* Always Default Enabled */
+/* EDIT BY https://github.com/8mpty */
 @import url(includes/consts.css);
-@import url(includes/bookmark_stuff.css);
-@import url(includes/remove_elements.css);
-@import url(includes/windows-control-buttons.css);
-@import url(includes/cascade-nav-bar.css);
 @import url(includes/custom-css.css);
 
+/* --- ONE LINER --- */
+@import url(includes/one_liner.css);
 
-/* For Icons */
+/* ----------MISC---------- */
+@import url(includes/remove_elements.css);
+@import url(includes/windows-control-buttons.css);
 /* @import url(includes/icon_only_default.css); */
 /* @import url(includes/icon_only_show_content_hover.css); */
 /* @import url(includes/icon_only_show_content_selected.css); */
-
-
-/* Misc */
-@import url(includes/url_w_shortcut.css);
-/* @import url(includes/autohidetoolbox.css); */
-/* @import url(includes/autohidetoolbar.css); */
-/* @import url(includes/one_liner.css); */
-
-
-/* Testing */
-@import url(includes/test.css);

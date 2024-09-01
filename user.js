@@ -24,7 +24,7 @@ user_pref("browser.dataFeatureRecommendations.enabled", false);
 // user_pref("browser.newtab.url", "about:blank");
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("app.shield.optoutstudies.enabled", false);
-user_pref("browser.search.suggest.enabled", false);
+// user_pref("browser.search.suggest.enabled", false);
 user_pref("browser.search.defaultenginename", "DuckDuckGo");
 user_pref("browser.search.selectedEngine", "DuckDuckGo");
 user_pref("browser.search.searchEnginesURL", "https://duckduckgo.com/");

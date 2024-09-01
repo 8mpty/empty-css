@@ -4,9 +4,12 @@
   /* padding-block-start: 0px !important; */
   border: none !important;
   box-shadow: none !important;
+  background: var(--grey-color) !important;
 }
 
 .browser-toolbar {
+  margin: 0px !important;
+  padding: 0px !important;
   background: var(--grey-color) !important;
 }
 
