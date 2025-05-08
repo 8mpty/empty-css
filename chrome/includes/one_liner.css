@@ -219,3 +219,9 @@
 #PanelUI-menu-button {
     padding: 0 !important;
 }
+
+/* LMAO WTF */
+/* TEMPORARY FIX DUAL WINDOWS CONTROL BUTTONS?? */
+.titlebar-buttonbox-container:nth-child(8){
+    display: none !important;
+}
